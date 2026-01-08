@@ -25,7 +25,13 @@
 
 ### 6. 문자열 처리
 - `string-algorithms.md` - 문자열 알고리즘
+- `regex-patterns-guide.md` - 정규식 패턴 완벽 가이드
 
 ### 7. 수학
 - `number-theory.md` - 수론
 - `combinatorics.md` - 조합론
+
+### 8. 기타
+- `coding-test-patterns.md` - 코딩테스트 핵심 패턴
+- `java-best-practices.md` - Java 코딩테스트 베스트 프랙티스
+- `arrays-utility-guide.md` - Java Arrays 클래스 완벽 가이드
