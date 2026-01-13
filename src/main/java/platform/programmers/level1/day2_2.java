@@ -10,25 +10,71 @@ import java.util.*;
 public class day2_2 {
 
     // 사용자 원본 코드 - 여러 문제점 존재
+//    public int[] originalSolution(int N, int[] stages) {
+//        int[] answer = {}; // 문제: 빈 배열 반환
+//        Long[] temp1 = new Long[N]; // 문제: Long 타입 사용, 실제로는 double이어야 함
+//        for(int i = 0; i < N; i++){
+//            // i+1 = 스테이지
+//            int stage = i+1;
+//
+//            //fail 스테이지 = stages[i] 현재스테이지 도달했으나 실패
+//            //tot 스테이지 <= stages[i] 현재스테이지 이상 도달
+//            int fail = 0;
+//            int tot = 0;
+//            for (int j = 0; j < stages.length; j++) {
+//                if(stages[j] == stage) fail++;
+//                if(stages[j] >= stage) tot++;
+//            }
+////            temp1[i] = (Long)fail / tot; // 문제: 정수 나눗셈, 0으로 나누기 가능성
+//        }
+//        System.out.println(Arrays.toString(temp1));
+//        return answer; // 문제: 빈 배열 반환, 정렬도 하지 않음
+//    }
+
     public int[] originalSolution(int N, int[] stages) {
         int[] answer = {}; // 문제: 빈 배열 반환
-        Long[] temp1 = new Long[N]; // 문제: Long 타입 사용, 실제로는 double이어야 함
-        for(int i = 0; i < N; i++){
-            // i+1 = 스테이지
-            int stage = i+1;
 
-            //fail 스테이지 = stages[i] 현재스테이지 도달했으나 실패
-            //tot 스테이지 <= stages[i] 현재스테이지 이상 도달
-            int fail = 0;
-            int tot = 0;
-            for (int j = 0; j < stages.length; j++) {
-                if(stages[j] == stage) fail++;
-                if(stages[j] >= stage) tot++;
-            }
-//            temp1[i] = (Long)fail / tot; // 문제: 정수 나눗셈, 0으로 나누기 가능성
+        int[] failCnt = new int[N+2];
+
+        for (int stage : stages) {
+            failCnt[stage]++;
         }
-        System.out.println(Arrays.toString(temp1));
-        return answer; // 문제: 빈 배열 반환, 정렬도 하지 않음
+//        System.out.println(Arrays.toString(failCnt));;
+        int totUserCnt = stages.length;
+//        System.out.println("totUserCnt: " + totUserCnt);
+
+//        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
+        double[][] sortedStages = new double[N][2];
+        for(int i = 1; i < failCnt.length-1; i++) {
+            int fail = failCnt[i];
+            double failRate = totUserCnt == 0 ? 0.0 : (double)fail / totUserCnt;
+//            System.out.println(i+" "+fail+" / "+totUserCnt);
+
+            sortedStages[i-1][0] = i;
+            sortedStages[i-1][1] = failRate;
+
+            totUserCnt -= fail;
+        }
+
+//        for (int i = 0; i < sortedStages.length; i++) {
+//            System.out.println(sortedStages[i][0] + " " + sortedStages[i][1]);
+//        }
+
+        Arrays.sort(sortedStages,(a,b) -> {
+            if(a[1] != b[1]){
+                return Double.compare(b[1],a[1]);
+            }
+            return Double.compare(a[0],b[0]);
+        });
+
+//        System.out.println(Arrays.deepToString(sortedStages));
+
+        answer = new int[N];
+        for (int i = 0; i < sortedStages.length; i++) {
+            answer[i] = (int)sortedStages[i][0];
+        }
+
+        return answer;
     }
 
     // 수정된 해법
@@ -121,12 +167,13 @@ public class day2_2 {
 
     public static void main(String[] args) {
         day2_2 obj = new day2_2();
-        int[] stages = {4,4,4,4,4};
-//        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
+//        int[] stages = {4,4,4,4,4};
+        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
 
-        System.out.println("수정된 결과: " + Arrays.toString(obj.solution(4, stages)));
-        System.out.println("최적화 결과: " + Arrays.toString(obj.solutionOptimized(4, stages)));
-        System.out.println("예상 결과:   [3, 4, 2, 1, 5]");
+        System.out.println("수정된 결과: " + Arrays.toString(obj.originalSolution(5, stages)));
+//        System.out.println("수정된 결과: " + Arrays.toString(obj.solution(4, stages)));
+//        System.out.println("최적화 결과: " + Arrays.toString(obj.solutionOptimized(4, stages)));
+//        System.out.println("예상 결과:   [3, 4, 2, 1, 5]");
     }
 }
 
