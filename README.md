@@ -190,6 +190,11 @@ public class BOJ1463 {
 - [x] **실패율** (프로그래머스 Lv1) - `day2_2.java` 로직 검증 완료
 - [x] **최솟값, 최댓값** (백준) - `day2_add.java` O(N) 최적화 완료
 
+### Day 3 완료 ✅ (2024-01-20)
+- [x] **다트 게임** (프로그래머스 Lv1) - `day3_1.java` 문자열 파싱 마스터
+- [x] **숫자 문자열과 영단어** (프로그래머스 Lv1) - `day3_2.java` StringBuilder 최적화 완료
+- [x] **알파벳 빈도수** (백준 추정) - `day3_add.java` HashMap 반복 패턴 학습
+
 ### Day 2 학습 성과
 - ✅ Arrays.copyOfRange() 활용한 부분 배열 추출 마스터  
 - ✅ Arrays 클래스 완벽 가이드 작성 (`docs/algorithm-notes/arrays-utility-guide.md`)
@@ -198,11 +203,20 @@ public class BOJ1463 {
 - ✅ Math.min/max 활용한 O(N) 최솟값/최댓값 추적 패턴
 - ✅ 시간복잡도 최적화 (O(N log N) → O(N)) 체험
 
+### Day 3 학습 성과
+- ✅ 문자열 파싱 고급 패턴 (10점 처리, 스타상 영향, 상태 관리)
+- ✅ StringBuilder 누적 및 최적화 기법 (length >= 3 조건 활용)
+- ✅ replaceAll vs replace 차이점 및 활용법
+- ✅ HashMap 반복 방법 4가지 (entrySet, keySet, values, forEach)
+- ✅ 문자열 치환 vs 파싱 접근법 비교
+- ✅ getOrDefault() 패턴으로 null 안전 프로그래밍
+
 ### 기초 알고리즘
 - [x] 입출력 및 기본 문법 (FastScanner, BufferedReader)
 - [x] 배열과 문자열 (StringBuilder, 정규식)
-- [x] HashMap 활용 (빈도수 카운팅, getOrDefault)
+- [x] HashMap 활용 (빈도수 카운팅, getOrDefault, 반복 패턴)
 - [x] 배열 조작 (Arrays.copyOfRange, 정렬, 이진탐색)
+- [x] 문자열 파싱 (상태 관리, 두 자리 수 처리, 치환 vs 파싱)
 
 ### 핵심 알고리즘  
 - [ ] DFS/BFS
@@ -216,40 +230,62 @@ public class BOJ1463 {
 
 ## 📊 현재 학습 현황
 
-### 해결한 문제 (6개)
+### 해결한 문제 (9개)
 1. **완주하지 못한 선수** - HashMap 빈도수 패턴
 2. **신규 아이디 추천** - 정규식 7단계 처리
 3. **문자열 반복** - StringBuilder + 다중 케이스
 4. **K번째 수** - Arrays.copyOfRange + 정렬
 5. **실패율** - 다중 조건 정렬, 실수 계산
 6. **최솟값, 최댓값** - Math.min/max + O(N) 최적화
+7. **다트 게임** - 문자열 파싱, 상태 관리, 10점 처리
+8. **숫자 문자열과 영단어** - StringBuilder 누적, replaceAll 활용
+9. **알파벳 빈도수** - HashMap 반복 패턴, getOrDefault
 
-### Day 2 완료! 🎉
-- ✅ 배열 조작 및 정렬 기초 완전 마스터
-- ✅ 시간복잡도 최적화 체험 완료
+### Day 3 완료! 🎉
+- ✅ 문자열 파싱 고급 패턴 완전 마스터 
+- ✅ HashMap 활용 및 반복 방법 완전 숙지
+- ✅ StringBuilder 최적화 기법 체득
 
-### 생성된 학습 자료
-- `docs/problem-solutions/prog-level1-완주하지못한선수.md` - 상세 문제 해설
+### 생성된 학습 자료 (총 9개)
+**문제 해설 (7개):**
+- `docs/problem-solutions/prog-level1-완주하지못한선수.md` - HashMap 빈도수 패턴
+- `docs/problem-solutions/prog-level1-신규아이디추천.md` - 정규식 7단계 처리
+- `docs/problem-solutions/baekjoon-2675-문자열반복.md` - 다중 테스트케이스
+- `docs/problem-solutions/prog-level1-K번째수.md` - Arrays.copyOfRange 활용
+- `docs/problem-solutions/prog-level1-실패율.md` - 다중 조건 정렬
+- `docs/problem-solutions/baekjoon-10818-최솟값최댓값.md` - 시간복잡도 최적화
+- `docs/problem-solutions/prog-level1-다트게임.md` - 문자열 파싱 마스터
+
+**알고리즘 가이드 (2개):**
 - `docs/algorithm-notes/regex-patterns-guide.md` - 정규식 완벽 가이드  
-- `docs/algorithm-notes/arrays-utility-guide.md` - Java Arrays 클래스 완벽 가이드
-- `docs/algorithm-notes/coding-test-patterns.md` - 핵심 패턴 모음
-- `docs/algorithm-notes/java-best-practices.md` - Java 베스트 프랙티스
-- `docs/study-plans/6weeks-curriculum.md` - 6주 커리큘럼
+- `docs/algorithm-notes/arrays-utility-guide.md` - Java Arrays 클래스 가이드
 
 ### 다음 목표
-- **Day 3 시작**: 문자열 파싱 심화 (다트 게임, 숫자 문자열과 영단어)
-- **Week 1 목표**: 기본기 & 구현 완전 복구
-- **이번 주 목표**: 배열, 문자열, 정렬 기초 완료
+- **Week 2 시작**: 재귀, 완전탐색, 시뮬레이션
+- **단기 목표**: 문자열 처리 + 배열 조작 마스터 완료
+- **중기 목표**: DFS/BFS 기초 및 동적 프로그래밍 입문
 
 ### 완료된 학습 체크리스트 ✅
-- [x] day2_2 실패율 계산 공식: `(double) fail / total`
-- [x] 0으로 나누기 방지: `(total == 0) ? 0.0 : ...`  
-- [x] 다중 조건 정렬: 실패율 내림차순 → 스테이지 번호 오름차순
-- [x] Arrays 클래스 활용법 전반 복습
-- [x] Math.min/max 활용한 O(N) 최적화 패턴
+**기초 문법 & 자료구조:**
+- [x] HashMap getOrDefault() 안전 패턴
+- [x] StringBuilder 효율적 활용 (String 연결 최적화)
+- [x] Arrays.copyOfRange() 부분 배열 추출
+- [x] Math.min/max 활용한 O(N) 최적화
+
+**문자열 처리:**
+- [x] 정규식 7단계 처리 (신규 아이디 추천)
+- [x] 문자열 파싱 상태 관리 (다트 게임)
+- [x] replaceAll vs replace 차이점 활용
+- [x] 두 자리 수 처리 (10점 특수 케이스)
+
+**고급 패턴:**
+- [x] 다중 조건 정렬 (실패율 내림차순 → 스테이지 번호 오름차순)
+- [x] 0으로 나누기 방지: `(total == 0) ? 0.0 : (double)fail/total`
+- [x] HashMap 반복 4가지 방법 (entrySet, keySet, values, forEach)
+- [x] 시간복잡도 최적화 체험 (O(N²) → O(N), O(N log N) → O(N))
 
 ---
 
 **Happy Coding! 🎯**
 
-*Last Updated: 2024-01-09 - Day 2 완료*
+*Last Updated: 2024-01-20 - Day 3 완료 🎉*
