@@ -50,6 +50,72 @@ Arrays.sort(nums, Collections.reverseOrder());
 System.out.println(Arrays.toString(nums)); // [9, 5, 4, 3, 1, 1]
 ```
 
+### 🔍 Comparator 반환값 규칙 이해하기
+
+`Comparator.compare(T o1, T o2)` 메서드의 반환값이 정렬 순서를 결정합니다:
+
+| 반환값 | 의미 | 정렬 결과 | 예시 |
+|--------|------|-----------|------|
+| **양수 (> 0)** | `o1 > o2` | o1을 뒤로 배치 | `return 1;` |
+| **0** | `o1 == o2` | 순서 유지 | `return 0;` |
+| **음수 (< 0)** | `o1 < o2` | o1을 앞으로 배치 | `return -1;` |
+
+#### Comparator 구현 방법 비교
+```java
+String[] arr = {"bed", "car", "apple"};  // 1번째 문자 기준 정렬 (e, a, p)
+
+// 방법 1: 전통적인 if-else 방식
+Arrays.sort(arr, new Comparator<String>() {
+    @Override
+    public int compare(String s1, String s2) {
+        char c1 = s1.charAt(1), c2 = s2.charAt(1);
+        if (c1 > c2) return 1;        // s1이 더 크면 뒤로
+        else if (c1 < c2) return -1;  // s1이 더 작으면 앞으로  
+        else return s1.compareTo(s2); // 같으면 전체 문자열로 비교
+    }
+});
+
+// 방법 2: 간단한 뺄셈 방식 (동일한 결과)
+Arrays.sort(arr, (s1, s2) -> {
+    int charCompare = s1.charAt(1) - s2.charAt(1);
+    return charCompare != 0 ? charCompare : s1.compareTo(s2);
+});
+
+// 방법 3: Comparator.comparing 방식 (가장 깔끔)
+Arrays.sort(arr, Comparator
+    .comparing((String s) -> s.charAt(1))
+    .thenComparing(s -> s));
+
+// 모든 방법의 결과: ["car", "bed", "apple"]  ('a' < 'e' < 'p' 순)
+```
+
+#### 1과 -1의 실제 동작 예시
+```java
+// "bed"와 "car" 비교 (1번째 문자: 'e' vs 'a')
+compare("bed", "car"):
+- s1.charAt(1) = 'e' (ASCII: 101)
+- s2.charAt(1) = 'a' (ASCII: 97)  
+- 'e' > 'a' → return 1
+- 의미: "bed"를 "car" 뒤로 배치
+- 결과: ["car", "bed"]
+
+// ASCII 값 차이로 더 간단하게
+'e' - 'a' = 101 - 97 = 4 (양수) → "bed"가 뒤로
+'a' - 'e' = 97 - 101 = -4 (음수) → "car"가 앞으로
+```
+
+#### 💡 Comparator 작성 팁
+```java
+// ✅ 권장: 간결하고 명확한 뺄셈 방식
+(a, b) -> a.charAt(n) - b.charAt(n)
+
+// ✅ 권장: Comparator.comparing 체이닝
+Comparator.comparing((String s) -> s.charAt(n)).thenComparing(s -> s)
+
+// ❌ 비권장: 장황한 if-else (가독성만 좋고 코드가 김)
+if (a > b) return 1; else if (a < b) return -1; else return 0;
+```
+
 ### 2. 배열 복사 `copyOf()`, `copyOfRange()`
 
 | 메서드 | 설명 | 예시 |

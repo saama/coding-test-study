@@ -230,7 +230,7 @@ public class BOJ1463 {
 
 ## 📊 현재 학습 현황
 
-### 해결한 문제 (9개)
+### 해결한 문제 (12개)
 1. **완주하지 못한 선수** - HashMap 빈도수 패턴
 2. **신규 아이디 추천** - 정규식 7단계 처리
 3. **문자열 반복** - StringBuilder + 다중 케이스
@@ -240,14 +240,34 @@ public class BOJ1463 {
 7. **다트 게임** - 문자열 파싱, 상태 관리, 10점 처리
 8. **숫자 문자열과 영단어** - StringBuilder 누적, replaceAll 활용
 9. **알파벳 빈도수** - HashMap 반복 패턴, getOrDefault
+10. **나는야 포켓몬 마스터 이다솜** - 양방향 매핑, 1-based 인덱싱
+11. **문자열 내 마음대로 정렬하기** - 커스텀 Comparator, 다중 조건 정렬
+12. **가장 큰 수** - 문자열 조합 비교 (a+b vs b+a), 엣지케이스 처리
 
-### Day 3 완료! 🎉
-- ✅ 문자열 파싱 고급 패턴 완전 마스터 
-- ✅ HashMap 활용 및 반복 방법 완전 숙지
-- ✅ StringBuilder 최적화 기법 체득
+### Day 4 완료 ✅ (2025-01-27)
+- [x] **나는야 포켓몬 마스터 이다솜** (백준 1620) - `day4_add.java` 양방향 매핑 패턴
 
-### 생성된 학습 자료 (총 9개)
-**문제 해설 (7개):**
+### Day 4 학습 성과
+- ✅ **양방향 매핑**: Array(번호→이름) + HashMap(이름→번호) 조합 패턴 마스터
+- ✅ **1-based 인덱싱**: 문제 조건에 맞는 자연스러운 배열 처리
+- ✅ **숫자/문자 판별**: Character.isDigit() vs try-catch 방법 비교
+- ✅ **메모리 최적화**: 즉시 처리 vs 저장 후 처리 기법
+- ✅ **시간/공간 복잡도**: 완벽 가이드 문서 생성
+
+### Day 5 완료 ✅ (2025-01-27)
+- [x] **문자열 내 마음대로 정렬하기** (프로그래머스 Lv1) - `day5_1.java` 커스텀 정렬 완성
+- [x] **가장 큰 수** (프로그래머스 Lv1) - `day5_2.java` 조합 비교 알고리즘 마스터
+
+### Day 5 학습 성과
+- ✅ **Arrays.sort 커스텀 정렬**: 3가지 방법 완전 숙지 (람다식, Comparator.comparing, 전통적 방식)
+- ✅ **Comparator 반환값 규칙**: 1/-1/0의 정확한 의미와 정렬 동작 원리 이해
+- ✅ **다중 조건 정렬**: 우선 조건 → 보조 조건 패턴 완성
+- ✅ **문자열 조합 비교**: a+b vs b+a 비교로 최적 조합 찾기 (가장 큰 수 핵심 알고리즘)
+- ✅ **배열 타입 주의사항**: int[] vs Integer[] Comparator 호환성
+- ✅ **엣지케이스 처리**: "000" → "0" 변환 등 실전 팁
+
+### 생성된 학습 자료 (총 12개)
+**문제 해설 (8개):**
 - `docs/problem-solutions/prog-level1-완주하지못한선수.md` - HashMap 빈도수 패턴
 - `docs/problem-solutions/prog-level1-신규아이디추천.md` - 정규식 7단계 처리
 - `docs/problem-solutions/baekjoon-2675-문자열반복.md` - 다중 테스트케이스
@@ -255,14 +275,23 @@ public class BOJ1463 {
 - `docs/problem-solutions/prog-level1-실패율.md` - 다중 조건 정렬
 - `docs/problem-solutions/baekjoon-10818-최솟값최댓값.md` - 시간복잡도 최적화
 - `docs/problem-solutions/prog-level1-다트게임.md` - 문자열 파싱 마스터
+- `docs/problem-solutions/baekjoon-1620-포켓몬마스터.md` - 양방향 매핑 패턴
 
-**알고리즘 가이드 (2개):**
+**알고리즘 가이드 (4개):**
 - `docs/algorithm-notes/regex-patterns-guide.md` - 정규식 완벽 가이드  
-- `docs/algorithm-notes/arrays-utility-guide.md` - Java Arrays 클래스 가이드
+- `docs/algorithm-notes/arrays-utility-guide.md` - Java Arrays 클래스 가이드 (Comparator 규칙 추가)
+- `docs/algorithm-notes/complexity-analysis.md` - 시간/공간복잡도 완벽 가이드
+- `docs/algorithm-notes/coding-test-patterns.md` - 기존 자료
+
+### Day 3-5 완료! 🎉
+- ✅ **고급 정렬**: 커스텀 Comparator 완전 마스터
+- ✅ **양방향 매핑**: HashMap + Array 조합 패턴 체득  
+- ✅ **복잡도 분석**: 시간/공간복잡도 이론 완성
+- ✅ **실전 알고리즘**: 조합 비교, 다중 조건 정렬 등
 
 ### 다음 목표
-- **Week 2 시작**: 재귀, 완전탐색, 시뮬레이션
-- **단기 목표**: 문자열 처리 + 배열 조작 마스터 완료
+- **Week 2 진입**: 재귀, 완전탐색, 시뮬레이션
+- **단기 목표**: 정렬 + HashMap 마스터 완료 ✅
 - **중기 목표**: DFS/BFS 기초 및 동적 프로그래밍 입문
 
 ### 완료된 학습 체크리스트 ✅
@@ -284,8 +313,18 @@ public class BOJ1463 {
 - [x] HashMap 반복 4가지 방법 (entrySet, keySet, values, forEach)
 - [x] 시간복잡도 최적화 체험 (O(N²) → O(N), O(N log N) → O(N))
 
+**새로 완료된 패턴 (Day 4-5):**
+- [x] 양방향 매핑: Array(인덱스→값) + HashMap(값→인덱스) 조합
+- [x] 1-based 인덱싱 처리법과 0-based 차이점 이해  
+- [x] 숫자/문자 판별: Character.isDigit() vs try-catch 방법
+- [x] Arrays.sort 커스텀 정렬 3가지 방법 (람다, Comparator.comparing, 전통적)
+- [x] Comparator 반환값 규칙 (-1/0/1)과 정렬 동작 원리
+- [x] 문자열 조합 비교: a+b vs b+a로 최적 조합 찾기
+- [x] 배열 타입 호환성: int[] vs Integer[] Comparator 사용법
+- [x] 시간/공간복잡도 완전 이해 (Big-O 표기법부터 실전 활용까지)
+
 ---
 
 **Happy Coding! 🎯**
 
-*Last Updated: 2024-01-20 - Day 3 완료 🎉*
+*Last Updated: 2025-01-27 - Day 4-5 완료! 고급 정렬과 양방향 매핑 마스터 🚀*
